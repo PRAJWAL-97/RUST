@@ -1,0 +1,51 @@
+2. Basic Syntax and Data Types
+
+Variables and Mutable/Immutable Bindings:
+In Rust, you can declare variables using the let keyword. Variables are immutable by default, meaning their values cannot be changed once set. To create a mutable variable, use let mut.
+
+let x = 5;          // Immutable variable
+let mut y = 10;     // Mutable variable
+y = 20;              // This is allowed for mutable variables
+
+Primitive Data Types (Integers, Floats, Booleans, Characters):
+Rust has several built-in primitive data types:
+
+Integers: i8, i16, i32, i64, i128, u8, u16, u32, u64, u128
+Floats: f32, f64
+Booleans: bool
+Characters: char
+
+let integer_num: i32 = 42;
+let floating_num: f64 = 3.14;
+let is_rust_fun: bool = true;
+let unicode_char: char = '🚀';
+
+Strings and String Manipulation:
+Rust has a String type for dynamically allocated strings and a &str type for string slices. String manipulation can involve methods like push_str, len, and string interpolation with format!.
+ 
+let mut greeting = String::from("Hello, ");
+greeting.push_str("Rust!");
+println!("{}", greeting); // Prints "Hello, Rust!"
+
+let name = "Alice";
+let message = format!("Hello, {}!", name);
+println!("{}", message); // Prints "Hello, Alice!"
+
+Control Flow (if, else, loops):
+Rust supports typical control flow structures like if, else, and various types of loops (loop, while, for). 
+let number = 5;
+if number < 10 {
+    println!("Number is less than 10");
+} else {
+    println!("Number is greater than or equal to 10");
+}
+
+let mut counter = 0;
+while counter < 5 {
+    println!("Counter: {}", counter);
+    counter += 1;
+}
+
+for i in 1..4 {
+    println!("Iteration: {}", i);
+}

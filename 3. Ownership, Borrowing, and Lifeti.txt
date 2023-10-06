@@ -1,0 +1,46 @@
+3. Ownership, Borrowing, and Lifetimes
+
+Ownership System and Memory Management:
+Rust's ownership system is a key feature that helps prevent common memory-related bugs. In Rust, each value has a variable that is its "owner," and when the owner goes out of scope, Rust automatically deallocates the memory associated with that value.
+ 
+fn main() {
+    let s = String::from("Hello"); // s is the owner of the String
+    // ...
+} // s goes out of scope, and Rust will automatically free the memory
+
+References and Borrowing:
+Rather than transferring ownership, you can borrow values using references. Borrowing comes in two flavors: mutable and immutable.
+ 
+fn main() {
+    let s1 = String::from("Hello");
+    let len = calculate_length(&s1); // Passing a reference to s1
+    println!("Length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize { // Immutable reference
+    s.len()
+}
+
+Mutable and Immutable References:
+You can have either one mutable reference or multiple immutable references to the same data, but not both at the same time. This enforces Rust's safety guarantees.
+ 
+fn main() {
+    let mut s = String::from("Hello");
+    let r1 = &s;
+    let r2 = &s;
+    // r1 and r2 are immutable references
+
+    let r3 = &mut s;
+    // This is an error: cannot have mutable reference while there are immutable references
+}
+
+Lifetime Annotations:
+Rust uses lifetime annotations to specify how long references are valid. This is essential when dealing with references in complex data structures.
+ 
+fn longest<'a>(s1: &'a str, s2: &'a str) -> &'a str {
+    if s1.len() > s2.len() {
+        s1
+    } else {
+        s2
+    }
+}
