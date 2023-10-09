@@ -1,0 +1,27 @@
+5. Error Handling
+
+Result and Option Types:
+Rust uses Result and Option types for handling errors and optional values, respectively.
+ 
+fn main() {
+    let result: Result<i32, &str> = Ok(42); // Result with a success value
+    let error_result: Result<i32, &str> = Err("Something went wrong"); // Result with an error
+
+    let option_value: Option<i32> = Some(42); // Some value
+    let none_value: Option<i32> = None; // No value
+}
+
+Error Handling with Result and Option:
+You can use match or unwrap to handle Result and Option values gracefully.
+ 
+fn main() {
+    let result: Result<i32, &str> = Ok(42);
+    match result {
+        Ok(value) => println!("Result: {}", value),
+        Err(error) => println!("Error: {}", error),
+    }
+
+    let option_value: Option<i32> = Some(42);
+    let unwrapped = option_value.unwrap_or(0);
+    println!("Option Value: {}", unwrapped);
+}

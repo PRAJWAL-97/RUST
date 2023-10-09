@@ -1,0 +1,53 @@
+4. Structs and Enums
+
+Defining and Using Structs:
+Structs allow you to create custom data types with named fields.
+ 
+struct Person {
+    name: String,
+    age: u32,
+}
+
+fn main() {
+    let person1 = Person {
+        name: String::from("Alice"),
+        age: 30,
+    };
+    println!("{} is {} years old.", person1.name, person1.age);
+}
+
+Enumerations and Pattern Matching:
+Enums allow you to define a type that can have multiple variants. Pattern matching is used to handle different enum variants.
+ 
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+fn main() {
+    let color = Color::Blue;
+    match color {
+        Color::Red => println!("It's red!"),
+        Color::Green => println!("It's green!"),
+        Color::Blue => println!("It's blue!"),
+    }
+}
+
+Associated Functions and Methods:
+You can define functions associated with a struct or enum using the impl keyword.
+ 
+struct Circle {
+    radius: f64,
+}
+
+impl Circle {
+    fn area(&self) -> f64 {
+        3.14159265359 * self.radius * self.radius
+    }
+}
+
+fn main() {
+    let my_circle = Circle { radius: 2.0 };
+    println!("Area of the circle: {}", my_circle.area());
+}

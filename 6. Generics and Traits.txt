@@ -1,0 +1,37 @@
+6. Generics and Traits
+
+Generic Functions and Data Structures:
+Generics allow you to write code that works with different data types.
+ 
+fn print_element<T>(element: T) {
+    println!("Element: {}", element);
+}
+
+fn main() {
+    print_element(42);
+    print_element("Hello");
+}
+
+Implementing Traits:
+Traits define behavior that can be implemented by types. Types can implement multiple traits.
+ 
+trait Shape {
+    fn area(&self) -> f64;
+}
+
+struct Circle {
+    radius: f64,
+}
+
+impl Shape for Circle {
+    fn area(&self) -> f64 {
+        3.14159265359 * self.radius * self.radius
+    }
+}
+
+Trait Bounds and Associated Types:
+You can use trait bounds to constrain generic types to those that implement specific traits.
+ 
+fn print_area<T: Shape>(shape: T) {
+    println!("Area: {}", shape.area());
+}
