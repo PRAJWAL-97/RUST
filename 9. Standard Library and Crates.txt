@@ -1,0 +1,22 @@
+9. Standard Library and Crates
+
+Exploring Rust's Standard Library:
+Rust comes with a powerful standard library that provides common data structures and functionality. It includes collections like Vec, HashMap, and modules for I/O, networking, and more.
+ 
+use std::collections::HashMap;
+
+fn main() {
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Alice"), 42);
+    scores.insert(String::from("Bob"), 36);
+
+    for (name, score) in &scores {
+        println!("{}: {}", name, score);
+    }
+}
+
+Using External Crates from crates.io:
+Rust has a package manager called Cargo, which makes it easy to add external libraries (crates) to your project. You can find crates on crates.io.
+
+[dependencies]
+rand = "0.8.4" # Example dependency on the 'rand' crate

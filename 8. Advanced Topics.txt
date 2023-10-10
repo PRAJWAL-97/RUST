@@ -1,0 +1,27 @@
+8. Advanced Topics
+
+Closures and Functional Programming:
+Rust supports closures, which are like anonymous functions that can capture their environment.
+ 
+fn main() {
+    let add = |x, y| x + y;
+    let result = add(3, 4);
+    println!("Result: {}", result);
+}
+
+
+Macros and Metaprogramming:
+Rust has a powerful macro system for code generation and metaprogramming.
+ 
+macro_rules! greeting {
+    () => {
+        println!("Hello, Rust!");
+    };
+}
+
+fn main() {
+    greeting!();
+}
+
+Unsafe Rust and FFI (Foreign Function Interface):
+In some cases, you may need to write unsafe code, such as when interfacing with C libraries or performing low-level operations.
