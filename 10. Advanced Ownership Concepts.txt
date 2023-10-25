@@ -1,0 +1,36 @@
+10. Advanced Ownership Concepts
+
+Interior Mutability with Cell and RefCell:
+Sometimes, you need to mutate data even when it's immutable. Cell and RefCell provide interior mutability.
+ 
+use std::cell::Cell;
+
+fn main() {
+    let x = Cell::new(42);
+    x.set(43);
+    println!("x: {:?}", x);
+}
+
+
+Rc and Arc for Reference Counting:
+Rc (Reference Count) and Arc (Atomic Reference Count) allow multiple ownership of data.
+ 
+use std::rc::Rc;
+
+fn main() {
+    let data = Rc::new(vec![1, 2, 3]);
+    let reference1 = Rc::clone(&data);
+    let reference2 = Rc::clone(&data);
+}
+Cow for Smart String Handling:
+Cow (short for "clone on write") is used for efficient handling of strings and other data that may be either owned or borrowed.
+ 
+use std::borrow::Cow;
+
+fn main() {
+    let s1: Cow<str> = Cow::Borrowed("borrowed string");
+    let s2: Cow<str> = Cow::Owned(String::from("owned string"));
+
+    let result = format!("Concatenated: {}", s1);
+    println!("{}", result);
+}

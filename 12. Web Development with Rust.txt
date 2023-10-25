@@ -1,0 +1,24 @@
+12. Web Development with Rust
+
+Using Web Frameworks like Rocket or Actix:
+Rust has several web frameworks to choose from. Rocket and Actix are popular choices for building web applications.
+ 
+// Example Rocket web application
+#[macro_use] extern crate rocket;
+
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, Rust!"
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build().mount("/", routes![index])
+}
+
+
+Building RESTful APIs:
+Rust is well-suited for building RESTful APIs. You can use libraries like serde-json for JSON serialization and Rocket for routing.
+
+Frontend Integration with WebAssembly:
+Rust can also be used for frontend web development by compiling to WebAssembly (Wasm). The wasm-bindgen and wasm-pack tools facilitate this process.
