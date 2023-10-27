@@ -1,0 +1,23 @@
+13. Systems Programming with Rust
+
+Interfacing with C Libraries:
+Rust provides FFI (Foreign Function Interface) for interfacing with C libraries. You can use the extern keyword to declare C functions and use them in Rust code.
+ 
+extern "C" {
+    fn printf(format: *const u8, ...) -> i32;
+}
+
+fn main() {
+    let format = b"Hello, %s\n\0" as *const u8;
+    let name = b"Rust\0" as *const u8;
+    unsafe {
+        printf(format, name);
+    }
+}
+
+
+Low-Level System Programming:
+Rust is suitable for low-level system programming, including writing operating systems, device drivers, and embedded systems.
+
+Building Command-Line Tools:
+Rust is a great choice for building command-line tools. Libraries like clap make it easy to create user-friendly command-line interfaces.

@@ -1,0 +1,10 @@
+14. Advanced Project and Best Practices
+
+Structuring Larger Rust Projects:
+As your projects grow, it's important to follow best practices for structuring code. Rust conventions include organizing code into modules, using Cargo workspaces, and applying the "Don't Repeat Yourself" (DRY) principle.
+
+Best Practices for Idiomatic Rust Code:
+Rust has a community-driven style guide called "The Rust Programming Language" book (often referred to as the Rust Book). It provides guidelines on writing idiomatic Rust code, including naming conventions, code organization, and error handling.
+
+Code Optimization and Profiling:
+Rust provides tools like Cargo's built-in profiling support and external profilers like perf for optimizing and profiling your code's performance.
